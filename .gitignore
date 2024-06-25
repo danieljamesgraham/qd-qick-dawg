@@ -3,3 +3,5 @@ qd_venv/
 
 # qick-dawg repository
 qick-dawg/
+
+.DS_Store
