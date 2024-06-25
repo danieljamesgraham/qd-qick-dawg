@@ -9,7 +9,7 @@ RFSoC-PYNQ
 No IP detected
 ```
 
-Set a fixed IP address on the local machine to 192.168.2.1 and set the subnet mask to 255.255.255.0. Use [nmap](https://nmap.org/) to locate the IP address of the dev. board:
+Set a fixed IP address on the local machine to 192.168.2.1 (host ID '1' is arbitrary) and set the subnet mask to 255.255.255.0. Use [nmap](https://nmap.org/) to locate the IP address of the dev. board:
 
 ```
 nmap -sn 192.168.2.1-255
@@ -25,3 +25,13 @@ scp -r qick xilinx@192.168.2.99:/home/xilinx/jupyter_notebooks
 ```
 
 Run all the cells in `installation/Install_Packages_LAN.ipynb` to complete the installation of the necessary packages. Resume the installation guide at step 3d.
+
+## Changing the Board's IP Address
+
+Open the Ethernet network interface configuration file:
+
+```
+sudo vim /etc/network/interfaces.d/eth0
+```
+
+Change the host ID of the IP address in line 6 (ie. change '99' in `address 192.168.2.99'`) with a host ID that is not currently utilised (refer to previously completed network scan).
